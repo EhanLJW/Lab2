@@ -1,52 +1,24 @@
-import statistics
-def display_main_menu():
-    print("Enter some numbers separated by commas (e.g. 5, 67, 32)")
+print("ET0735 (DevOps for AIoT) - Lab 2 - Intoduction to Python")
 
+def calculate_bmi(weight, height):
+    print("Height = " + str(height))
+    print("Weight = " + str(weight))
 
-def get_user_input():
-    number = input().split(",")
-    return [float(x) for x in number]
+#Add code here to calculate BMI
+    bmi_height = float(height)
+    bmi_weight = float(weight)
+    bmi_total = bmi_weight/((bmi_height)*(bmi_height))
 
+    if (bmi_total < 18.5):
+        print("under weight")
 
-def calc_average(list):
-    total = 0
-    for number in list:
-        total = total + number
-    average = total / len(list)
-    return average
+    elif(18.5 <= bmi_total <= 25):
+        print("normal weight")
 
+    else:
+        print("over weight")
 
-def find_min_max(lists):
-    min_num = min(lists)
-    max_num = max(lists)
-    return min_num, max_num
+    print("BMI = "+ str(bmi_total) )
 
-
-
-
-def calc_median_temperature(middle):
-    mid = statistics.median(middle)
-    return mid
-
-
-def main():
-    print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
-    display_main_menu()
-    num_list = get_user_input()
-    print(calc_average(num_list))
-    print(find_min_max(num_list))
-    print(calc_median_temperature(num_list))
-
-
-if __name__ == "__main__":
-    main()
-
-
-
-
-
-"""
-#def calc_median_temperature():
-
-def sort_temperature():
-"""
+#Add code here to display calculate BMI
+calculate_bmi(57, 1.73)
